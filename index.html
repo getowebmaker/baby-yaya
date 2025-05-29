@@ -1,26 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>mod menu buy</title>
+  <title>Baby Yaya Video</title>
   <style>
     html, body {
       margin: 0;
       height: 100%;
       background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #startBtn {
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff5b5b;
+      color: white;
+      cursor: pointer;
     }
     video {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
-      display: block;
+      display: none;
     }
   </style>
 </head>
-<body>
-  <video controls autoplay loop>
+<body oncontextmenu="return false">
+
+  <button id="startBtn">Get Menu</button>
+
+  <video id="video" controls autoplay loop>
     <source src="video/myvideo.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
+    Your browser does not support the video tag.
   </video>
+
+  <script>
+    const btn = document.getElementById('startBtn');
+    const video = document.getElementById('video');
+
+    btn.onclick = () => {
+      btn.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    };
+  </script>
 </body>
 </html>
